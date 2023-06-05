@@ -11,7 +11,7 @@ head = list;
 current = list;
 while(current != NULL)
 {
-current = current->next->next->next;
+current = current->next;
 if (current == head)
 	return (1);
 }
