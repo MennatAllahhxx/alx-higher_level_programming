@@ -9,9 +9,10 @@ int check_cycle(listint_t *list)
 listint_t *head, *current;
 head = list;
 current = list;
-while(current != NULL)
+while(current != NULL && head != NULL)
 {
-current = current->next;
+head = head->next;
+current = current->next->next;
 if (current == head)
 	return (1);
 }
