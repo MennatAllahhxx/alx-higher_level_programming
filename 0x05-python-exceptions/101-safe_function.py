@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-def safe_print_integer_err(value):
+def safe_function(fct, *args):
     try:
         n = fct(*args)
         return n
