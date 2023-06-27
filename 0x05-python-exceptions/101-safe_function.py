@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 def safe_print_integer_err(value):
     try:
-        n = fct(8args)
+        n = fct(*args)
         return n
     except Exception as err:
         import sys
