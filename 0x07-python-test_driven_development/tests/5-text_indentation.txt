@@ -1,0 +1,52 @@
+The ``5-text_indentation`` module
+======================
+
+Using ``text_indentation``
+-------------------
+
+Importing the function from the module:
+	>>> text_indentation = __import__("5-text_indentation").text_indentation
+
+Checking for module docstring:
+	>>> m = __import__("5-text_indentation").__doc__
+	>>> len(m) > 1
+	True
+
+Checking for function docstring:
+	>>> f = __import__("5-text_indentation").text_indentation.__doc__
+	>>> len(f) > 1
+	True
+
+Checking regular str:
+	>>> text_indentation("""Lorem , consectetur. modo?""")
+	Lorem , consectetur.
+	<BLANKLINE>
+	modo?
+	<BLANKLINE>
+
+Checking multiple sliptters:
+	>>> text_indentation("???")
+	?
+	<BLANKLINE>
+	?
+	<BLANKLINE>
+	?
+	<BLANKLINE>
+
+Checking int:
+	>>> text_indentation(1)
+	Traceback (most recent call last):
+	...
+	TypeError: text must be a string
+
+Checking no arguments:
+	>>> text_indentation()
+	Traceback (most recent call last):
+	...
+	TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+Checking two arguments:
+        >>> text_indentation("a","b")
+        Traceback (most recent call last):
+        ...
+        TypeError: text_indentation() takes 1 positional argument but 2 were given
