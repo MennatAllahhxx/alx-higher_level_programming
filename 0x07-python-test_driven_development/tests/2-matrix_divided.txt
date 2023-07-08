@@ -68,3 +68,19 @@ Checking division by str:
 	Traceback (most recent call last):
 	...
 	TypeError: div must be a number
+
+Checking for no args:
+	 >>> matrix_divided()
+         Traceback (most recent call last):
+         ...
+         TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
+
+Checking for 1 arg:
+	 >>> matrix_divided(matrix)
+	 Traceback (most recent call last):
+	 ...
+    	 TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+Checking for division by infinity:
+	 >>> matrix_divided(matrix, float('inf'))
+	 [[0.0], [0.0], [0.0]]
