@@ -82,5 +82,6 @@ Checking for 1 arg:
     	 TypeError: matrix_divided() missing 1 required positional argument: 'div'
 
 Checking for division by infinity:
+	 >>> matrix = [[1, 2], [3, 4]]
 	 >>> matrix_divided(matrix, float('inf'))
 	 [[0.0], [0.0], [0.0]]

@@ -77,6 +77,12 @@ class TestMaxInteger(unittest.TestCase):
         with self.assertRaises(TypeError):
             max_integer([1, 2, 3, 'a'])
 
+    def test_one_element(self):
+        """
+        tests for only one number in the list
+        :return: true if correct
+        """
+        self.assertEqual([1], 1)
 
 if __name__ == "__main__":
     unittest.main()
