@@ -82,7 +82,7 @@ class TestMaxInteger(unittest.TestCase):
         tests for only one number in the list
         :return: true if correct
         """
-        self.assertEqual([1], 1)
+        self.assertEqual(max_integer([1]), 1)
 
 
 if __name__ == "__main__":
