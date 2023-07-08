@@ -84,4 +84,4 @@ Checking for 1 arg:
 Checking for division by infinity:
 	 >>> matrix = [[1, 2], [3, 4]]
 	 >>> matrix_divided(matrix, float('inf'))
-	 [[0.0], [0.0], [0.0]]
+	 [[0.0, 0.0], [0.0, 0.0]]
