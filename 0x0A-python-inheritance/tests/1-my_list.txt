@@ -6,7 +6,7 @@ Using ``print_sorted``
 -------------------
 
 Importing the class from the module:
-	>>> add_integer = __import__("1-my_list").MyList
+	>>> MyList = __import__("1-my_list").MyList
 
 Checking for module docstring:
 	>>> m = __import__("1-my_list").__doc__
@@ -25,52 +25,31 @@ Checking regular list 1:
 	>>> my_list.append(2)
 	>>> my_list.append(3)
 	>>> my_list.append(5)
-	>>> print(my_list)
 	>>> my_list.print_sorted()
-	[1, 4, 2, 3, 5]
 	[1, 2, 3, 4, 5]
 
 Checking regular list 2:
 	>>> my_list = MyList([1, 2, 3, 0])
-	>>> print(my_list)
 	>>> my_list.print_sorted()
-	[1, 2, 3, 0]
 	[0, 1, 2, 3]
 
 Checking negative numbers:
 	>>> my_list = MyList([-1, -8, 4, -100, 2])
-	>>> print(my_list)
 	>>> my_list.print_sorted()
-	[-1, -8, 4, -100, 2]
 	[-100, -8, -1, 2, 4]
 
 Checking string:
 	>>> my_list = MyList("spongebob")
-	>>> print(my_list)
 	>>> my_list.print_sorted()
-	['s', 'p', 'o', 'n', 'g', 'e', 'b', 'o', 'b']
 	['b', 'b', 'e', 'g', 'n', 'o', 'o', 'p', 's']
-
 
 Checking list of string:
 	>>> my_list = MyList(["spongebob", "squarepants"])
-	>>> print(my_list)
 	>>> my_list.print_sorted()
-	['spongebob', 'squarepants']
 	['spongebob', 'squarepants']
 
 Checking no arguments:
 	>>> my_list = MyList()
-	>>> print(my_list)
 	>>> my_list.print_sorted()
 	[]
-	[]
 
-
-Checking two arguments:
-  	>>> my_list = MyList("spongebob", "squarepants")
-	>>> print(my_list)
-	>>> my_list.print_sorted()
-        Traceback (most recent call last):
-        ...
-        TypeError: list expected at most 1 argument, got 2
