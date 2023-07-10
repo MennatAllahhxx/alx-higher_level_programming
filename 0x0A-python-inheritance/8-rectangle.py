@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 """
-this is '8-base_geometry' module
+this is '8-rectangle' module
 
-this module contains 1 class: BaseGeometry
+this module contains 2 classes: BaseGeometry, Rectangle
 
 BaseGeometry contains 2 methods: area(self),
-                                integer_validator(self, name, value)
+integer_validator(self, name, value)
 """
 
 
