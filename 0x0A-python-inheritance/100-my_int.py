@@ -5,6 +5,7 @@ this is '100-my_int' module
 this module contains 1 class: MyInt
 """
 
+
 class MyInt(int):
     """
     this is a class to convert stuff
@@ -16,7 +17,7 @@ class MyInt(int):
         :return: the opposite
         """
         return not super().__eq__(other)
-    
+
     def __ne__(self, other):
         """
         a method to convert not equal
