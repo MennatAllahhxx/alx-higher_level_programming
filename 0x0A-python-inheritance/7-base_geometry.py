@@ -1,11 +1,10 @@
 #!/usr/bin/python3
 """
-this is '6-base_geometry' module
+this is '7-base_geometry' module
 
 this module contains 1 class: BaseGeometry
 
-BaseGeometry contains 2 methods: area(self),
-                                integer_validator(self, name, value)
+BaseGeometry contains 2 methods: area(self), integer_validator(self, name, value)
 """
 
 
@@ -31,5 +30,5 @@ class BaseGeometry:
 
         if type(value) is not int:
             raise TypeError(f"{name} must be an integer")
-        if value <= 0:
+        if value < 1:
             raise ValueError(f"{name}  must be greater than 0")
