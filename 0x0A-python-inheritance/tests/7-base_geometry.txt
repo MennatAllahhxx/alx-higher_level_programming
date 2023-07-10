@@ -119,6 +119,34 @@ Checking value as a float:
 	...
 	TypeError: width must be an integer
 
+Checking value as a dict:
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("width", {1:2})
+	Traceback (most recent call last):
+	...
+	TypeError: width must be an integer
+
+Checking value as a array:
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("width", {1, 2})
+	Traceback (most recent call last):
+	...
+	TypeError: width must be an integer
+
+Checking value as a incomplete tuple:
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("width", (1, ))
+	Traceback (most recent call last):
+	...
+	TypeError: width must be an integer
+
+Checking value as a list:
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("width", [1])
+	Traceback (most recent call last):
+	...
+	TypeError: width must be an integer
+
 Checking value as a boolean:
 	>>> bg = BaseGeometry()
 	>>> bg.integer_validator("width", True)
@@ -126,7 +154,7 @@ Checking value as a boolean:
 	...
 	TypeError: width must be an integer
 
-Checking value as a list:
+Checking value as a None:
 	>>> bg = BaseGeometry()
 	>>> bg.integer_validator("width", None)
 	Traceback (most recent call last):
