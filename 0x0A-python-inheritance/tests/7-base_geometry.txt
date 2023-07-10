@@ -68,14 +68,14 @@ Checking zero:
 	>>> bg.integer_validator("width", 0)
 	Traceback (most recent call last):
 	...
-	ValueError: width  must be greater than 0
+	ValueError: width must be greater than 0
 
 Checking negative value:
 	>>> bg = BaseGeometry()
 	>>> bg.integer_validator("width", -89)
 	Traceback (most recent call last):
 	...
-	ValueError: width  must be greater than 0
+	ValueError: width must be greater than 0
 
 Checking value as a string:
 	>>> bg = BaseGeometry()
