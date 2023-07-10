@@ -46,8 +46,7 @@ class Rectangle(BaseGeometry):
         :param width: width of rectangle
         :param height: height of rectangle
         """
+        super().integer_validator("width", width)
         self.__width = width
+        super().integer_validator("height", height)
         self.__height = height
-
-        self.integer_validator("width", self.__width)
-        self.integer_validator("height", self.__height)
