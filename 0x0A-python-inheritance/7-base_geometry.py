@@ -4,7 +4,8 @@ this is '7-base_geometry' module
 
 this module contains 1 class: BaseGeometry
 
-BaseGeometry contains 2 methods: area(self), integer_validator(self, name, value)
+BaseGeometry contains 2 methods: area(self),
+integer_validator(self, name, value)
 """
 
 
