@@ -126,6 +126,13 @@ Checking value as a boolean:
 	...
 	TypeError: width must be an integer
 
+Checking value as a list:
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("width", None)
+	Traceback (most recent call last):
+	...
+	TypeError: width must be an integer
+
 Checking name as an int:
 	>>> bg = BaseGeometry()
 	>>> bg.integer_validator(12, 89)
