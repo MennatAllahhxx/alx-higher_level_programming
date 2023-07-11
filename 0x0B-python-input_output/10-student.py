@@ -13,7 +13,6 @@ class Student:
     a new class for student
     """
 
-
     def __init__(self, first_name, last_name, age):
         """
         initializing values
@@ -34,10 +33,9 @@ class Student:
 
         if attrs is None or not isinstance(attrs, list):
             return self.__dict__
-        else:
-            my_list = {}
-            for attr in attrs:
-                if hasattr(self, attr):
-                    my_list[attr] = getattr(self, attr)
-            return my_list
-
+            
+        my_list = {}
+        for attr in attrs:
+            if hasattr(self, attr):
+                my_list[attr] = getattr(self, attr)
+        return my_list
