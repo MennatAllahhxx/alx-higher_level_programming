@@ -33,7 +33,7 @@ class Student:
 
         if attrs is None and not isinstance(attrs, list):
             return self.__dict__
-            
+
         my_list = {}
         for attr in attrs:
             if hasattr(self, attr):
