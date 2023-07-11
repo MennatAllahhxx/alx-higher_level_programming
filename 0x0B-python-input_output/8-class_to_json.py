@@ -2,7 +2,6 @@
 """
 this is '7-add_item' module
 """
-import json
 
 
 def class_to_json(obj):
@@ -11,4 +10,4 @@ def class_to_json(obj):
     :param obj: object
     :return: dict description
     """
-    return json.dumps(obj.__dict__)
+    return obj.__dict__
