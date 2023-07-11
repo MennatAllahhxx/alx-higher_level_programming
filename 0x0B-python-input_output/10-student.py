@@ -13,6 +13,7 @@ class Student:
     a new class for student
     """
 
+
     def __init__(self, first_name, last_name, age):
         """
         initializing values
