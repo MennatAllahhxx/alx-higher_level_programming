@@ -30,7 +30,6 @@ class Student:
         :param attrs: list of attributes
         :return: dict description
         """
-
         if attrs is None and not isinstance(attrs, list):
             return self.__dict__
 
