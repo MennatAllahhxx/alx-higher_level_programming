@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """
-this is '7-add_item' module
+this is '8-class_to_json' module
+
+this module contains 1 function: class_to_json
 """
 
 
