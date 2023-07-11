@@ -31,7 +31,7 @@ class Student:
         :return: dict description
         """
 
-        if attrs is None or not isinstance(attrs, list):
+        if attrs is None and not isinstance(attrs, list):
             return self.__dict__
             
         my_list = {}
