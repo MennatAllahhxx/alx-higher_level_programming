@@ -15,11 +15,16 @@ def append_after(filename="", search_string="", new_string=""):
     :return: nth
     """
     with open(filename, 'r+', encoding="utf-8") as file:
+        if not search_string or not new_string:
+            return
         file_content = file.readlines()
+        if not file_content:
+            return
         index = 0
         for line in file_content:
             if line.find(search_string) != -1:
                 file_content.insert(index + 1, new_string)
+                i += 1
             index += 1
         file.seek(0)
         file.write("".join(file_content))
