@@ -15,7 +15,7 @@ def append_after(filename="", search_string="", new_string=""):
     :return: nth
     """
     with open(filename, 'r+', encoding="utf-8") as file:
-        if not search_string or not new_string:
+        if not filename or not search_string or not new_string:
             return
         file_content = file.readlines()
         if not file_content:
