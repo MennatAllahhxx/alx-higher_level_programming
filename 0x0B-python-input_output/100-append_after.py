@@ -24,7 +24,7 @@ def append_after(filename="", search_string="", new_string=""):
         for line in file_content:
             if line.find(search_string) != -1:
                 file_content.insert(index + 1, new_string)
-                index += 1
+                
             index += 1
         file.seek(0)
         file.write("".join(file_content))
