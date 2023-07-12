@@ -14,7 +14,7 @@ def append_after(filename="", search_string="", new_string=""):
     :param new_string: string to be appended
     :return: nth
     """
-    with open(filename, 'w+', encoding="utf-8") as file:
+    with open(filename, 'r+', encoding="utf-8") as file:
         file_content = file.readlines()
         index = 0
         for line in file_content:
