@@ -4,7 +4,7 @@ this is 'square' module
 
 this module contains 1 class: Square
 
-this class contains 3 methods: area, display, update
+this class contains 2 methods: update, to_dictionary
 
 Rectangle class is imported
 """
@@ -72,3 +72,14 @@ class Square(Rectangle):
                 self.x = kwargs["x"]
             if "y" in kwargs:
                 self.y = kwargs["y"]
+
+    def to_dictionary(self):
+        """
+        method to return dict of class
+        :return: dictionary
+        """
+        dictionary = {"id": self.id,
+                      "x": self.x,
+                      "size": self.size,
+                      "y": self.y}
+        return dictionary
