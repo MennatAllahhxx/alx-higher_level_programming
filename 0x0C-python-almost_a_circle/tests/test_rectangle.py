@@ -8,6 +8,7 @@ import inspect
 import io
 import unittest
 from io import StringIO
+from contextlib import redirect_stdout
 from models.rectangle import Rectangle
 from models.base import Base
 import pep8
@@ -19,19 +20,20 @@ class TestRectangle(unittest.TestCase):
     """
 
     @classmethod
+    def setUp(self):
+        """
+        set up class everytime
+        :return: nth
+        """
+        Base._Base__nb_objects = 0
+
+    @classmethod
     def get_methods(cls):
         """
         a method to get the methods in the class
         :return: nth
         """
         cls.methods = inspect.getmembers(Rectangle, inspect.isfunction)
-
-    def test_module_doctest(self):
-        """
-        test to check doctest of module
-        :return: nth
-        """
-        self.assertTrue(len(rectangle.__doc__) > 1)
 
     def test_class_doctest(self):
         """
@@ -45,6 +47,7 @@ class TestRectangle(unittest.TestCase):
         test to check doctest of methods
         :return: nth
         """
+        self.get_methods()
         for method in self.methods:
             self.assertTrue(len(method[1].__doc__) > 1)
 
@@ -90,9 +93,9 @@ class TestRectangle(unittest.TestCase):
         test for task 4
         :return: nth
         """
-        self.assertEqual(Rectangle(3, 2).area, 6)
-        self.assertEqual(Rectangle(2, 10).area, 20)
-        self.assertEqual(Rectangle(8, 7, 0, 0, 12).area, 56)
+        self.assertEqual(Rectangle(3, 2).area(), 6)
+        self.assertEqual(Rectangle(2, 10).area(), 20)
+        self.assertEqual(Rectangle(8, 7, 0, 0, 12).area(), 56)
 
     def test_task5(self):
         """
@@ -156,7 +159,7 @@ class TestRectangle(unittest.TestCase):
         r1.update(89, 2, 3, 4)
         self.assertEqual(str(r1), "[Rectangle] (89) 4/10 - 2/3")
         r1.update(89, 2, 3, 4, 5)
-        self.assertEqual(str(r1), "[Rectangle] (89) 4/5- 2/3")
+        self.assertEqual(str(r1), "[Rectangle] (89) 4/5 - 2/3")
 
     def test_task9(self):
         """
@@ -190,3 +193,7 @@ class TestRectangle(unittest.TestCase):
         r2.update(**r1_dictionary)
         self.assertEqual(str(r2), "[Rectangle] (1) 1/9 - 10/2")
         self.assertFalse(r1 == r2)
+
+
+if __name__ == '__main__':
+    unittest.main()

@@ -92,6 +92,6 @@ class Base:
                 inst = cls.from_json_string(file.read())
                 for i in inst:
                     my_list.append(cls.create(**i))
-        except:
+        except Exception:
             pass
         return my_list

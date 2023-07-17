@@ -22,6 +22,7 @@ class TestSquare(unittest.TestCase):
     @classmethod
     def setUp(self):
         Base._Base__nb_objects = 0
+
     @classmethod
     def get_methods(cls):
         """
@@ -48,7 +49,7 @@ class TestSquare(unittest.TestCase):
 
     def test_class_pep8(self):
         """
-        test for pep8 of 'rectangle' module
+        test for pep8 of 'square' module
         :return: nth
         """
         pep8style = pep8.StyleGuide(quiet=True)
