@@ -4,6 +4,8 @@ this is 'rectangle' module
 
 this module contains 1 class: Rectangle
 
+this class contains 3 methods: area, display, update
+
 Base class is imported
 """
 from models.base import Base
