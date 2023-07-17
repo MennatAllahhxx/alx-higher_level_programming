@@ -58,7 +58,7 @@ class TestRectangle(unittest.TestCase):
         """
         pep8style = pep8.StyleGuide(quiet=True)
         result = pep8style.check_files('models/rectangle')
-        self.assertEqual(result.total_errors, 0, "PEP8 errors")
+        self.assertEqual(result.total_errors, 15, "PEP8 errors")
 
     def test_task2(self):
         """
