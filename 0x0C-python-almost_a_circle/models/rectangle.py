@@ -33,6 +33,10 @@ class Rectangle(Base):
 
     @property
     def width(self):
+        """
+        getter for width
+        :return: nth
+        """
         return self.__width
 
     @width.setter
@@ -50,6 +54,10 @@ class Rectangle(Base):
 
     @property
     def height(self):
+        """
+        getter for height
+        :return: nth
+        """
         return self.__height
 
     @height.setter
@@ -67,6 +75,10 @@ class Rectangle(Base):
 
     @property
     def x(self):
+        """
+            getter for x
+            :return: nth
+            """
         return self.__x
 
     @x.setter
@@ -84,6 +96,10 @@ class Rectangle(Base):
 
     @property
     def y(self):
+        """
+            getter for y
+            :return: nth
+            """
         return self.__y
 
     @y.setter
@@ -111,8 +127,7 @@ class Rectangle(Base):
         to display the rectangle
         :return: prints the rectangle
         """
-        for i in range(self.__y):
-            print()
+        print("\n" * self.__y, end="")
         for i in range(self.__height):
             print(" " * self.__x + "#" * self.__width)
 

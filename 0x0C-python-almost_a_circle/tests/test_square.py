@@ -21,6 +21,10 @@ class TestSquare(unittest.TestCase):
 
     @classmethod
     def setUp(self):
+        """
+        set up class everytime
+        :return: nth
+        """
         Base._Base__nb_objects = 0
 
     @classmethod
