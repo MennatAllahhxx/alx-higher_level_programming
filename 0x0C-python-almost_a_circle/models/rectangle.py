@@ -4,7 +4,7 @@ this is 'rectangle' module
 
 this module contains 1 class: Rectangle
 
-this class contains 3 methods: area, display, update
+this class contains 4 methods: area, display, update, to_dictionary
 
 Base class is imported
 """
