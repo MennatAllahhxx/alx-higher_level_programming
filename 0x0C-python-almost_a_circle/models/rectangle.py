@@ -121,10 +121,11 @@ class Rectangle(Base):
         """
         return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}"
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """
         method to assign args to attrs
         :param args: arguments
+        :param kwargs: keyword-arguments
         :return: attributes
         """
         if len(args) >= 1:
@@ -137,3 +138,14 @@ class Rectangle(Base):
             self.x = args[3]
         if len(args) >= 5:
             self.y = args[4]
+        if len(args) <= 0:
+            if "id" in kwargs:
+                self.id = kwargs["id"]
+            if "width" in kwargs:
+                self.width = kwargs["width"]
+            if "height" in kwargs:
+                self.height = kwargs["height"]
+            if "x" in kwargs:
+                self.x = kwargs["x"]
+            if "y" in kwargs:
+                self.y = kwargs["y"]
