@@ -151,3 +151,15 @@ class Rectangle(Base):
                 self.x = kwargs["x"]
             if "y" in kwargs:
                 self.y = kwargs["y"]
+
+    def to_dictionary(self):
+        """
+        method to return dict of class
+        :return: dictionary
+        """
+        dictionary = {"x": self.x,
+                      "y": self.y,
+                      "id": self.id,
+                      "height": self.height,
+                      "width": self.width}
+        return dictionary
