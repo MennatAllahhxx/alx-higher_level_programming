@@ -109,8 +109,10 @@ class Rectangle(Base):
         to display the rectangle
         :return: prints the rectangle
         """
+        for i in range(self.__y):
+            print()
         for i in range(self.__height):
-            print("#" * self.__width)
+            print(" " * self.__x + "#" * self.__width)
 
     def __str__(self):
         """
@@ -118,3 +120,15 @@ class Rectangle(Base):
         :return: representation
         """
         return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}"
+
+    def update(self, *args):
+        """
+        method to assign args to attrs
+        :param args: arguments
+        :return: attributes
+        """
+        super().__init__(args[0])
+        self.width = args[1]
+        self.height = args[2]
+        self.x = args[3]
+        self.y = args[4]
