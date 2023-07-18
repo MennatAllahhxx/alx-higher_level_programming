@@ -7,7 +7,6 @@ unittest for 'square' module
 import inspect
 import unittest
 import io
-from io import StringIO
 from contextlib import redirect_stdout
 from models.square import Square
 from models.base import Base
@@ -90,6 +89,49 @@ class TestSquare(unittest.TestCase):
             expected_op = "\n\n\n ###\n ###\n ###\n"
             self.assertEqual(actual_op, expected_op)
 
+    def test_task10_extra(self):
+        """
+        test for task 10 extra
+        :return: nth
+        """
+        with self.assertRaises(TypeError):
+            s = Square()
+        with self.assertRaises(ValueError):
+            s = Square(-1)
+        with self.assertRaises(ValueError):
+            s = Square(1, -2)
+        with self.assertRaises(ValueError):
+            s = Square(1, 2, -3)
+        with self.assertRaises(TypeError):
+            s = Square("a")
+        with self.assertRaises(TypeError):
+            s = Square(1, "b")
+        with self.assertRaises(TypeError):
+            s = Square(1, 2, "c")
+        with self.assertRaises(TypeError):
+            s = Square((1, -1))
+        with self.assertRaises(TypeError):
+            s = Square(1, (2, -2))
+        with self.assertRaises(TypeError):
+            s = Square(1, 2, (3, -3))
+        with self.assertRaises(TypeError):
+            s = Square([1, -1])
+        with self.assertRaises(TypeError):
+            s = Square(1, [2, -2])
+        with self.assertRaises(TypeError):
+            s = Square(1, 2, [3, -3])
+        with self.assertRaises(TypeError):
+            s = Square({"a": 1})
+        with self.assertRaises(TypeError):
+            s = Square(1, {"b": 2})
+        with self.assertRaises(TypeError):
+            s = Square(1, 2, {"c": 3})
+        s1 = Square(2)
+        with self.assertRaises(TypeError):
+            s1.area(1)
+        with self.assertRaises(TypeError):
+            s1.display(1)
+
     def test_task11(self):
         """
         test for task 11
@@ -124,6 +166,57 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(str(s1), "[Square] (1) 12/1 - 7")
         s1.update(size=7, id=89, y=1)
         self.assertEqual(str(s1), "[Square] (89) 12/1 - 7")
+
+    def test_task12_extra(self):
+        """
+        test for task 12 extra
+        :return: nth
+        """
+        s = Square(10, 10, 10, 10)
+        with self.assertRaises(ValueError):
+            s.update(1, -2)
+        with self.assertRaises(ValueError):
+            s.update(1, 2, -3)
+        with self.assertRaises(ValueError):
+            s.update(1, 2, 3, -4)
+        with self.assertRaises(TypeError):
+            s.update(1, "b")
+        with self.assertRaises(TypeError):
+            s.update(1, 2, "c")
+        with self.assertRaises(TypeError):
+            s.update(1, 2, 3, "d")
+        with self.assertRaises(TypeError):
+            s.update(1, (2, -2))
+        with self.assertRaises(TypeError):
+            s.update(1, 2, (3, -3))
+        with self.assertRaises(TypeError):
+            s.update(1, 2, 3, (4, -4))
+        with self.assertRaises(TypeError):
+            s.update(1, [2, -2])
+        with self.assertRaises(TypeError):
+            s.update(1, 2, [3, -3])
+        with self.assertRaises(TypeError):
+            s.update(1, 2, 3, [4, -4])
+        with self.assertRaises(TypeError):
+            s.update(1, {"b": 2})
+        with self.assertRaises(TypeError):
+            s.update(1, 2, {"c": 3})
+        with self.assertRaises(TypeError):
+            s.update(1, 2, 3, {"d": 4})
+        with self.assertRaises(TypeError):
+            s.update(size="a")
+        with self.assertRaises(TypeError):
+            s.update(x="b")
+        with self.assertRaises(TypeError):
+            s.update(y="c")
+        with self.assertRaises(ValueError):
+            s.update(size=0)
+        with self.assertRaises(ValueError):
+            s.update(size=-1)
+        with self.assertRaises(ValueError):
+            s.update(x=-1)
+        with self.assertRaises(ValueError):
+            s.update(y=-1)
 
     def test_task14(self):
         """
