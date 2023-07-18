@@ -7,7 +7,6 @@ unittest for 'rectangle' module
 import inspect
 import io
 import unittest
-from io import StringIO
 from contextlib import redirect_stdout
 from models.rectangle import Rectangle
 from models.base import Base
@@ -72,6 +71,16 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r2.id, 2)
         self.assertEqual(r3.id, 12)
 
+    def test_task2_extra(self):
+        """
+        test for task 2 extra
+        :return: nth
+        """
+        with self.assertRaises(TypeError):
+            Rectangle(10, 2, 3, 1, 10, 10)
+        with self.assertRaises(TypeError):
+            Rectangle()
+
     def test_task3(self):
         """
         test for task 3
@@ -87,6 +96,28 @@ class TestRectangle(unittest.TestCase):
             r.x = {}
         with self.assertRaises(ValueError):
             Rectangle(10, 2, 3, -1)
+
+    def test_task3_extra(self):
+        """
+        test for task 3 extra
+        :return: nth
+        """
+        with self.assertRaises(ValueError):
+            Rectangle(-10, 2, 3, 1)
+        with self.assertRaises(ValueError):
+            Rectangle(10, -2, 3, 1)
+        with self.assertRaises(ValueError):
+            Rectangle(10, 2, -3, 1)
+        with self.assertRaises(ValueError):
+            Rectangle(10, 2, 3, -1)
+        with self.assertRaises(TypeError):
+            Rectangle("10", 2, 3, 1)
+        with self.assertRaises(TypeError):
+            Rectangle(10, "2", 3, 1)
+        with self.assertRaises(TypeError):
+            Rectangle(10, 2, "3", 1)
+        with self.assertRaises(TypeError):
+            Rectangle(10, 2, 3, "1")
 
     def test_task4(self):
         """
@@ -114,6 +145,15 @@ class TestRectangle(unittest.TestCase):
             actual_op = buff.getvalue()
             expected_op = "##\n##\n"
             self.assertEqual(actual_op, expected_op)
+
+    def test_task5_extra(self):
+        """
+        test for task 5 extra
+        :return: nth
+        """
+        r1 = Rectangle(4, 6)
+        with self.assertRaises(TypeError):
+            r1.display(15)
 
     def test_task6(self):
         """
@@ -160,6 +200,29 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(str(r1), "[Rectangle] (89) 4/10 - 2/3")
         r1.update(89, 2, 3, 4, 5)
         self.assertEqual(str(r1), "[Rectangle] (89) 4/5 - 2/3")
+
+    def test_task8_extra(self):
+        """
+        test for task 8 extra
+        :return: nth
+        """
+        r1 = Rectangle(89, 2, 3, 4, 5)
+        with self.assertRaises(TypeError):
+            r1.update(1, "a")
+        with self.assertRaises(TypeError):
+            r1.update(1, 2, "b")
+        with self.assertRaises(TypeError):
+            r1.update(1, 2, 3, "c")
+        with self.assertRaises(TypeError):
+            r1.update(1, 2, 3, 4, "d")
+        with self.assertRaises(ValueError):
+            r1.update(1, -1)
+        with self.assertRaises(ValueError):
+            r1.update(1, 2, -2)
+        with self.assertRaises(ValueError):
+            r1.update(1, 2, 3, -3)
+        with self.assertRaises(ValueError):
+            r1.update(1, 2, 3, 4, -4)
 
     def test_task9(self):
         """
