@@ -35,7 +35,7 @@ class Base:
         :return: json-string
         """
         if list_dictionaries is None:
-            return []
+            return json.dumps([])
         return json.dumps(list_dictionaries)
 
     @staticmethod
