@@ -255,6 +255,30 @@ class TestRectangle(unittest.TestCase):
             r1.update(1, 2, 3, -3)
         with self.assertRaises(ValueError):
             r1.update(1, 2, 3, 4, -4)
+        with self.assertRaises(TypeError):
+            r1.update(1, {"a": -1})
+        with self.assertRaises(TypeError):
+            r1.update(1, 2, {"b": -2})
+        with self.assertRaises(TypeError):
+            r1.update(1, 2, 3, {"c": -3})
+        with self.assertRaises(TypeError):
+            r1.update(1, 2, 3, 4, {"d": -4})
+        with self.assertRaises(TypeError):
+            r1.update(1, [1, -1])
+        with self.assertRaises(TypeError):
+            r1.update(1, 2, [2, -2])
+        with self.assertRaises(TypeError):
+            r1.update(1, 2, 3, [3, -3])
+        with self.assertRaises(TypeError):
+            r1.update(1, 2, 3, 4, [4, -4])
+        with self.assertRaises(TypeError):
+            r1.update(1, (1, -1))
+        with self.assertRaises(TypeError):
+            r1.update(1, 2, (2, -2))
+        with self.assertRaises(TypeError):
+            r1.update(1, 2, 3, (3, -3))
+        with self.assertRaises(TypeError):
+            r1.update(1, 2, 3, 4, (4, -4))
 
     def test_task9(self):
         """
