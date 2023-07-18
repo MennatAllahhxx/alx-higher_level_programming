@@ -6,6 +6,7 @@ unittest for 'base' module
 """
 import inspect
 import unittest
+from json import JSONDecodeError
 from models.base import Base
 from models.rectangle import Rectangle
 import pep8
@@ -103,7 +104,12 @@ class TestBase(unittest.TestCase):
         """
         json_dictionary = Base.to_json_string([])
         self.assertEqual(str(json_dictionary), '[]')
+        self.assertEqual(Base.to_json_string(None), "[]")
         self.assertEqual(type(json_dictionary), str)
+        with self.assertRaises(TypeError):
+            Base.to_json_string()
+        with self.assertRaises(TypeError):
+            Base.to_json_string(1, 1)
 
     def test_task16(self):
         """
@@ -117,6 +123,16 @@ class TestBase(unittest.TestCase):
             self.assertEqual(str(file.read()),
                              '[{"x": 2, "y": 8, "id": 1, "height": 7, "width": 10}, \
 {"x": 0, "y": 0, "id": 2, "height": 4, "width": 2}]')
+
+    def test_task16_extra(self):
+        """
+        test for task 16 extra
+        :return: nth
+        """
+        with self.assertRaises(TypeError):
+            Base.save_to_file()
+        with self.assertRaises(TypeError):
+            Base.save_to_file(1, 1)
 
     def test_task17(self):
         """
@@ -148,6 +164,8 @@ class TestBase(unittest.TestCase):
         self.assertEqual(json_dictionary, [])
         json_dictionary = Base.from_json_string(None)
         self.assertEqual(json_dictionary, [])
+        with self.assertRaises(TypeError):
+            Base.from_json_string(1, 1)
 
     def test_task18(self):
         """
