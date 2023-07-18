@@ -73,6 +73,14 @@ class TestBase(unittest.TestCase):
         b5 = Base()
         self.assertEqual(b5.id, 4)
 
+    def test_task1_extra(self):
+        """
+        test for task 1 extra
+        :return: nth
+        """
+        with self.assertRaises(TypeError):
+            b1 = Base(7, 5)
+
     def test_task15(self):
         """
         test for task 15
@@ -86,6 +94,15 @@ class TestBase(unittest.TestCase):
         self.assertEqual(type(dictionary), dict)
         self.assertEqual(str(json_dictionary),
                          '[{"x": 2, "y": 8, "id": 1, "height": 7, "width": 10}]')
+        self.assertEqual(type(json_dictionary), str)
+
+    def test_task15_extra(self):
+        """
+        test for task 15 extra
+        :return: nth
+        """
+        json_dictionary = Base.to_json_string([])
+        self.assertEqual(str(json_dictionary), '[]')
         self.assertEqual(type(json_dictionary), str)
 
     def test_task16(self):
@@ -121,6 +138,16 @@ class TestBase(unittest.TestCase):
         self.assertEqual(str(f"[{type(list_output)}] {list_output}"),
                          "[<class 'list'>] [{'id': 89, 'width': 10, 'height': 4}, \
 {'id': 7, 'width': 1, 'height': 7}]")
+
+    def test_task17_extra(self):
+        """
+        test for task 17 extra
+        :return: nth
+        """
+        json_dictionary = Base.from_json_string("[]")
+        self.assertEqual(json_dictionary, [])
+        json_dictionary = Base.from_json_string(None)
+        self.assertEqual(json_dictionary, [])
 
     def test_task18(self):
         """
