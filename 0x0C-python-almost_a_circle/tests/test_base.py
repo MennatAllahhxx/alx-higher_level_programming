@@ -94,7 +94,8 @@ class TestBase(unittest.TestCase):
                          "{'x': 2, 'y': 8, 'id': 1, 'height': 7, 'width': 10}")
         self.assertEqual(type(dictionary), dict)
         self.assertEqual(str(json_dictionary),
-                         '[{"x": 2, "y": 8, "id": 1, "height": 7, "width": 10}]')
+                         '[{"x": 2, "y": 8, "id": 1, \
+"height": 7, "width": 10}]')
         self.assertEqual(type(json_dictionary), str)
 
     def test_task15_extra(self):
@@ -121,8 +122,9 @@ class TestBase(unittest.TestCase):
         Rectangle.save_to_file([r1, r2])
         with open("Rectangle.json", "r") as file:
             self.assertEqual(str(file.read()),
-                             '[{"x": 2, "y": 8, "id": 1, "height": 7, "width": 10}, \
-{"x": 0, "y": 0, "id": 2, "height": 4, "width": 2}]')
+                             '[{"x": 2, "y": 8, "id": 1, \
+"height": 7, "width": 10}, {"x": 0, "y": 0, "id": 2, \
+"height": 4, "width": 2}]')
 
     def test_task16_extra(self):
         """
@@ -146,14 +148,14 @@ class TestBase(unittest.TestCase):
         json_list_input = Rectangle.to_json_string(list_input)
         list_output = Rectangle.from_json_string(json_list_input)
         self.assertEqual(str(f"[{type(list_input)}] {list_input}"),
-                         "[<class 'list'>] [{'id': 89, 'width': 10, 'height': 4}, \
-{'id': 7, 'width': 1, 'height': 7}]")
+                         "[<class 'list'>] [{'id': 89, 'width': 10, \
+'height': 4}, {'id': 7, 'width': 1, 'height': 7}]")
         self.assertEqual(str(f"[{type(json_list_input)}] {json_list_input}"),
-                         "[<class 'str'>] [{\"id\": 89, \"width\": 10, \"height\": 4}, \
-{\"id\": 7, \"width\": 1, \"height\": 7}]")
+                         "[<class 'str'>] [{\"id\": 89, \"width\": 10, \
+\"height\": 4}, {\"id\": 7, \"width\": 1, \"height\": 7}]")
         self.assertEqual(str(f"[{type(list_output)}] {list_output}"),
-                         "[<class 'list'>] [{'id': 89, 'width': 10, 'height': 4}, \
-{'id': 7, 'width': 1, 'height': 7}]")
+                         "[<class 'list'>] [{'id': 89, 'width': 10, \
+'height': 4}, {'id': 7, 'width': 1, 'height': 7}]")
 
     def test_task17_extra(self):
         """
