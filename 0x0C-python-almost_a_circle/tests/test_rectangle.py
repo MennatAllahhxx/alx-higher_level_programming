@@ -118,6 +118,38 @@ class TestRectangle(unittest.TestCase):
             Rectangle(10, 2, "3", 1)
         with self.assertRaises(TypeError):
             Rectangle(10, 2, 3, "1")
+        with self.assertRaises(TypeError):
+            Rectangle([10, -10], 2, 3, 1)
+        with self.assertRaises(TypeError):
+            Rectangle(10, [2, -2], 3, 1)
+        with self.assertRaises(TypeError):
+            Rectangle(10, 2, [3, -3], 1)
+        with self.assertRaises(TypeError):
+            Rectangle(10, 2, 3, [1, -1])
+        with self.assertRaises(TypeError):
+            Rectangle((10, -10), 2, 3, 1)
+        with self.assertRaises(TypeError):
+            Rectangle(10, (2, -2), 3, 1)
+        with self.assertRaises(TypeError):
+            Rectangle(10, 2, (3, -3), 1)
+        with self.assertRaises(TypeError):
+            Rectangle(10, 2, 3, (1, -1))
+        with self.assertRaises(TypeError):
+            Rectangle((10,), 2, 3, 1)
+        with self.assertRaises(TypeError):
+            Rectangle(10, (2,), 3, 1)
+        with self.assertRaises(TypeError):
+            Rectangle(10, 2, (3,), 1)
+        with self.assertRaises(TypeError):
+            Rectangle(10, 2, 3, (1,))
+        with self.assertRaises(TypeError):
+            Rectangle({"a": 10}, 2, 3, 1)
+        with self.assertRaises(TypeError):
+            Rectangle(10, {"b": 2}, 3, 1)
+        with self.assertRaises(TypeError):
+            Rectangle(10, 2, {"c": 3}, 1)
+        with self.assertRaises(TypeError):
+            Rectangle(10, 2, 3, {"d": 1})
 
     def test_task4(self):
         """
