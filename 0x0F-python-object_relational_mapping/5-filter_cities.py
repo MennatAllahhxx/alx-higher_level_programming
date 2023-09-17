@@ -20,12 +20,11 @@ def get_database():
     )
 
     cursor = db.cursor()
-    cursor.execute(f"\
-                   SELECT cities.name\
+    cursor.execute("SELECT cities.name\
                    FROM cities \
                    INNER JOIN states\
                    ON cities.state_id = states.id\
-                   WHERE name='{:s}'\ 
+                   WHERE name='{:s}'\
                    ORDER BY cities.id ASC\
                    ".format(argv[4]))
     rows = cursor.fetchall()
