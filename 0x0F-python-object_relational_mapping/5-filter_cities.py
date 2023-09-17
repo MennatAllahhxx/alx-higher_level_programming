@@ -29,10 +29,12 @@ def filter_database():
                    ORDER BY cities.id ASC\
                    ".format(argv[4]))
     rows = cursor.fetchall()
+    result = []
 
     for row in rows:
-        print(row)
+        result.append(row[0])
 
+    print(", ".join(result))
     cursor.close()
     db.close()
 
