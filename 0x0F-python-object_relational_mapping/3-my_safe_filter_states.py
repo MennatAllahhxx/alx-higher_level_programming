@@ -21,9 +21,10 @@ def my_safe_filter_database():
         db=argv[3]
     )
 
+    name_search = argv[4]
     cursor = db.cursor()
     cursor.execute("SELECT * FROM states WHERE name=%s \
-        ORDER BY id ASC", (argv[4]))
+        ORDER BY id ASC", (name_search))
     rows = cursor.fetchall()
 
     for row in rows:
