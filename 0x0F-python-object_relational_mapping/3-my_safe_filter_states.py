@@ -22,7 +22,7 @@ def my_safe_filter_database():
     )
 
     cursor = db.cursor()
-    cursor.execute(f"SELECT * FROM states WHERE name = ? \
+    cursor.execute("SELECT * FROM states WHERE name=%s \
         ORDER BY id ASC", (argv[4]))
     rows = cursor.fetchall()
 
