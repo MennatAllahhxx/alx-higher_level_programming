@@ -25,7 +25,7 @@ def filter_database():
                    FROM cities \
                    INNER JOIN states\
                    ON cities.state_id = states.id\
-                   WHERE name='{:s}' \
+                   WHERE states.name='{:s}' \
                    ORDER BY cities.id ASC\
                    ".format(argv[4]))
     rows = cursor.fetchall()
