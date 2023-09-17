@@ -9,10 +9,10 @@ def get_database():
     """
     
     db = MySQLdb.connect(
-        host="localhost",
+        host='localhost',
         port=3306,
-        username=argv[1],
-        pswd=argv[2],
+        user=argv[1],
+        passwd=argv[2],
         db=argv[3]
     )
     
@@ -27,7 +27,5 @@ def get_database():
     db.close()
     
 
-if __name__=="__main__":
+if __name__=='__main__':
     get_database()
-    
-    
