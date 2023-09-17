@@ -7,9 +7,9 @@ import MySQLdb
 from sys import argv
 
 
-def get_database():
+def filter_database():
     """
-    a function to get the database
+    a function to filter the database
     """
 
     db = MySQLdb.connect(
@@ -21,7 +21,7 @@ def get_database():
     )
 
     cursor = db.cursor()
-    cursor.execute("SELECT * FROM states WHERE name LIKE BINARY '%N' ORDER BY id ASC")
+    cursor.execute("SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id ASC")
     rows = cursor.fetchall()
 
     for row in rows:
@@ -32,4 +32,4 @@ def get_database():
 
 
 if __name__ == '__main__':
-    get_database()
+    filter_database()
