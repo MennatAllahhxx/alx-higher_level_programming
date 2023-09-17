@@ -22,7 +22,7 @@ def my_safe_filter_database():
     )
 
     cursor = db.cursor()
-    cursor.execute(f"SELECT * FROM states WHERE BINARY name=? \
+    cursor.execute(f"SELECT * FROM states WHERE BINARY name = ? \
         ORDER BY id ASC", (argv[4]))
     rows = cursor.fetchall()
 
