@@ -25,7 +25,7 @@ def my_filter_database():
     session = Session()
 
     lou = State(name="Louisiana")
-    
+
     session.add(lou)
     session.commit()
     print(lou.id)
