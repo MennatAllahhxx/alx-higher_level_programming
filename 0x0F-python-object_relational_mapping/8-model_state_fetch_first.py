@@ -25,8 +25,10 @@ def get_database():
     rows = session.query(State).order_by(State.id).all()
 
     row = rows[0]
-    print("{}: {}".format(row.id, row.name))
-
+    if row:
+        print("{}: {}".format(row.id, row.name))
+    else:
+        print("Nothing")
     session.close()
 
 
