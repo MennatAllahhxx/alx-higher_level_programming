@@ -23,8 +23,6 @@ def my_filter_database():
     Session.configure(bind=engine)
 
     session = Session()
-    row = session.query(State).filter(State.name == argv[4]).first()
-    session = Session()
 
     lou = State(name="Louisiana")
     
