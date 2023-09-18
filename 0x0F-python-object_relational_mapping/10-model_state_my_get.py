@@ -26,7 +26,7 @@ def my_filter_database():
     row = session.query(State).filter(State.name == argv[4]).first()
 
     if row:
-        print("{}: {}".format(row.id, row.name))
+        print(row.id)
     else:
         print("Not found")
 
