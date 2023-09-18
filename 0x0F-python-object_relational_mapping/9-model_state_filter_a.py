@@ -22,7 +22,8 @@ def filter_database():
     Session.configure(bind=engine)
 
     session = Session()
-    rows = session.query(State).filter(State.name.like('%a%')).order_by(State.id).all()
+    rows = session.query(State).filter(State.name.like('%a%\
+        ')).order_by(State.id).all()
 
     for row in rows:
         print("{}: {}".format(row.id, row.name))
