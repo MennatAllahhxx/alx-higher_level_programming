@@ -6,7 +6,7 @@ from model_state import Base
 from sqlalchemy import Column, Integer, String, ForeignKey
 
 
-class State(Base):
+class City(Base):
     """
     cities database
 
