@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-a script that prints the State object with the name passed as
-argument from the database hbtn_0e_6_usa
+a script that adds the State object “Louisiana”
+to the database hbtn_0e_6_usa
 """
 from sqlalchemy import (create_engine)
 from sqlalchemy.orm import sessionmaker
