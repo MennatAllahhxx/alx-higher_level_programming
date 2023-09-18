@@ -24,6 +24,7 @@ def my_filter_database():
 
     session = Session()
     row = session.query(State).filter(State.name == argv[4]).first()
+    session = Session()
 
     lou = State(name="Louisiana")
     
