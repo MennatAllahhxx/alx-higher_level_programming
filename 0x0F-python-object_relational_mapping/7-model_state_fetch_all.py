@@ -25,7 +25,7 @@ def get_database():
     rows = session.query(State).order_by(State.id).all()
 
     for row in rows:
-        print("{}: {}".format(state.id, state.name))
+        print("{}: {}".format(row.id, row.name))
 
     session.close()
 
