@@ -8,7 +8,7 @@ from model_state import State, Base
 from sys import argv
 
 
-def get_database():
+def first_state():
     """
     a function to get the database
     """
@@ -22,15 +22,15 @@ def get_database():
     Session.configure(bind=engine)
 
     session = Session()
-    rows = session.query(State).order_by(State.id).all()
+    row = session.query(State).order_by(State.id).first()
 
-    row = rows[0]
     if row:
-        print("{}: {}".format(row.id, row.name))
+        print('{}: {}'.format(row.id, row.name))
     else:
         print("Nothing")
+
     session.close()
 
 
 if __name__ == '__main__':
-    get_database()
+    first_state()
