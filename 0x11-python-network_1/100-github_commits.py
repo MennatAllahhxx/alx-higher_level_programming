@@ -11,14 +11,11 @@ def github_repo_commits():
     url = 'https://api.github.com/repos/{}/{}/commits'.format(argv[2], argv[1])
     req = requests.get(url=url).json()
 
-    try:
-        for i in range(10):
-            print("{}: {}".format(req[i]["sha"],
-                                  req[i]["author"]["name"]
-                                  )
-                  )
-    except Exception:
-        pass
+    for i in range(10):
+        print("{}: {}".format(req[i]['sha'],
+                                req[i]['commit']['author']['name']
+                                )
+                )
 
 
 if __name__ == '__main__':
