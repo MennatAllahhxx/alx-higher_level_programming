@@ -2,8 +2,6 @@
 """6-post_email Module"""
 
 import requests
-from urllib.request import urlopen, Request
-from urllib.parse import urlencode
 from sys import argv
 
 
