@@ -19,12 +19,12 @@ def post_letter():
     try:
         req_json = req.json()
 
-        if not len(req_json):
+        if not req_json:
             print("No result")
 
         else:
-            id = req_json('id')
-            name = req_json('name')
+            id = req_json.get('id')
+            name = req_json.get('name')
             print("[{}] {}".format(id, name))
 
     except ValueError:
