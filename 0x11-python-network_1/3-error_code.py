@@ -9,12 +9,13 @@ from sys import argv
 def find_error():
     """a script to find error"""
 
-    # req = Request(argv[1])
+    req = Request(argv[1])
 
     try:
-        with urlopen(argv) as url_response:
+        with urlopen(req) as url_response:
             response = url_response.read()
             print(response.decode('UTF-8'))
+
     except HTTPError as e:
         print("Error code: {}".format(e.code))
 
