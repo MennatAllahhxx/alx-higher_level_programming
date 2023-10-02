@@ -8,9 +8,9 @@ from sys import argv
 def post_letter():
     """a script to post a letter"""
 
-    if argv[1]:
+    try:
         q = argv[1]
-    else:
+    except:
         q = ""
 
     data = {'q': q}
