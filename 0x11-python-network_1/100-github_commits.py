@@ -13,9 +13,9 @@ def github_repo_commits():
 
     for i in range(10):
         print("{}: {}".format(req[i]['sha'],
-                                req[i]['commit']['author']['name']
-                                )
-                )
+                              req[i]['commit']['author']['name']
+                              )
+              )
 
 
 if __name__ == '__main__':
