@@ -19,7 +19,7 @@ def post_letter():
     try:
         req_json = req.json()
 
-        if not req_json:
+        if len(req_json) == 0:
             print("No result")
 
         else:
