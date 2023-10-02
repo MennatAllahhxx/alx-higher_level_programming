@@ -27,7 +27,7 @@ def post_letter():
             name = req_json('name')
             print("[{}] {}".format(id, name))
 
-    except Exception:
+    except ValueError:
         print("Not a valid JSON")
 
 
