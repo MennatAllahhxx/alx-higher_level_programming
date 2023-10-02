@@ -14,7 +14,7 @@ def post_letter():
         q = ""
 
     data = {'q': q}
-    req = requests.get('http://0.0.0.0:5000/search_user', data)
+    req = requests.post('http://0.0.0.0:5000/search_user', data)
 
     try:
         req_json = req.json()
