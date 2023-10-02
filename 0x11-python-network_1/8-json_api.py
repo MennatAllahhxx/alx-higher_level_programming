@@ -8,9 +8,9 @@ from sys import argv
 def post_letter():
     """a script to post a letter"""
 
-    try:
+    if len(argv) > 1:
         q = argv[1]
-    except:
+    else:
         q = ""
 
     data = {'q': q}
@@ -18,7 +18,7 @@ def post_letter():
 
     try:
         req_json = req.json()
-        
+
         if not len(req_json):
             print("No result")
 
@@ -27,7 +27,7 @@ def post_letter():
             name = req_json('name')
             print("[{}] {}".format(id, name))
 
-    except:
+    except Exception:
         print("Not a valid JSON")
 
 
