@@ -9,11 +9,11 @@ def github_repo_commits():
     """a script to display github last 10 commits"""
 
     url = 'https://api.github.com/repos/{}/{}/commits'.format(argv[2], argv[1])
-    req = requests.get(url=url).json()
+    commits = requests.get(url=url).json()
 
-    for i in range(10):
-        print("{}: {}".format(req[i]['sha'],
-                              req[i]['commit']['author']['name']
+    for commit in commits[:10]:
+        print("{}: {}".format(commit.get('sha'),
+                              commit.get('commit').get('author').get('name')
                               )
               )
 
