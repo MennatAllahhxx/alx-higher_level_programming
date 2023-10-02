@@ -8,8 +8,8 @@ from sys import argv
 def my_github():
     """a script to display github id"""
 
-    req = requests.post(url='https://api.github.com/user',
-                        auth=(argv[1], argv[2]))
+    req = requests.get(url='https://api.github.com/user',
+                       auth=(argv[1], argv[2]))
 
     if req.status_code >= 400:
         print("None")
